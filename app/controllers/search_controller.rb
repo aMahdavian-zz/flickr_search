@@ -6,10 +6,13 @@ class SearchController < ApplicationController
 
     return if !params[:search_term].present?
 
-    @search_results = flickr.photos.search(
+    photos = flickr.photos.search(
         text:     params[:search_term],
-        page:     1,
+        page:     params[:page] || 1,
         per_page: 30
-      )    
+      )
+    @search_results = WillPaginate::Collection.create(photos.page, photos.page, photos.pages) do |pager|
+       pager.replace(photos.to_a)
+    end
   end
 end

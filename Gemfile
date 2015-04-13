@@ -9,7 +9,7 @@ gem 'pg', '~> 0.18.1'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'autoprefixer-rails'
-gem 'will_paginate', '~> 3.0.7'
+gem 'will_paginate-bootstrap'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
