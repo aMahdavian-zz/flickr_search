@@ -13,4 +13,4 @@ You are going to need the following to run this application:
 Demo
 ----
 
-[https://flickrphotos.herokuapp.com](https://flickrphotos.herokuapp.com)
+https://flickrphotos.herokuapp.com
