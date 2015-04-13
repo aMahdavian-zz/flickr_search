@@ -1,4 +1,6 @@
 class SearchController < ApplicationController
+  PER_PAGE = 30
+  
   def index
   end
 
@@ -9,9 +11,9 @@ class SearchController < ApplicationController
       photos = flickr.photos.search(
         text:     @search_term,
         page:     params[:page] || 1,
-        per_page: 30
+        per_page: PER_PAGE
       )
-      @search_results = WillPaginate::Collection.create(photos.page, photos.page, photos.pages) do |pager|
+      @search_results = WillPaginate::Collection.create(photos.page, PER_PAGE, photos.total) do |pager|
         pager.replace(photos.to_a)
       end
     end    
