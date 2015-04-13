@@ -23,11 +23,11 @@
         .photo-item
           = link_to image_tag( FlickRaw.url_m(photo)), "#",{title: photo.title, class: "image-modal", "data-img-url" => FlickRaw.url_b(photo)}
       = javascript_tag do
-        $('.image-modal').click(showImageModal);      
-.pagination-container  
-  .page_info
-    = page_entries_info @search_results, :model => 'photos'
-  %div
-    = will_paginate @search_results, renderer: BootstrapPagination::Rails if @search_results
+        $('.image-modal').click(showImageModal);
 - if @search_results
+  .pagination-container
+    .page_info
+      = page_entries_info @search_results, :model => 'photos'
+    %div
+      = will_paginate @search_results, renderer: BootstrapPagination::Rails
   = render partial: "image_modal"
