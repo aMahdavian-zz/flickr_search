@@ -22,6 +22,8 @@
       - @search_results.each do |photo|
         .photo-item
           = link_to image_tag( FlickRaw.url_m(photo)), "#",{title: photo.title, class: "image-modal", "data-img-url" => FlickRaw.url_b(photo)}
+      = javascript_tag do
+        $('.image-modal').click(showImageModal);
 .pagination-container
   %div
     = will_paginate @search_results, renderer: BootstrapPagination::Rails if @search_results
